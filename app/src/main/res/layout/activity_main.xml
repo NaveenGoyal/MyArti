@@ -16,39 +16,33 @@
     </GridView>
 
 
-    <android.support.design.widget.FloatingActionButton
-
+    <Button
         android:id="@+id/fab1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:clickable="true"
-        app:elevation="4dp"
         android:scaleType="fitXY"
-        android:layout_margin="12dp"
-
+        android:text="दुर्गा चालीसा"
         android:layout_marginLeft="5dp"
-
+        android:textAllCaps="true"
+        android:textColor="#F00000"
+        android:textSize="20dp"
         android:layout_marginTop="5dp"
-        app:backgroundTint="#F00000"
-        android:src="@drawable/durga_3"
+
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <android.support.design.widget.FloatingActionButton
-
+    <Button
         android:id="@+id/fab"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:clickable="true"
-android:elevation="4dp"
-android:layout_margin="12dp"
-        android:src="@drawable/play_1"
+
+
 
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        app:backgroundTint="#F00000"
-
 
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"

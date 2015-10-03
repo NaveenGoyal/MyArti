@@ -10,12 +10,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 
 
 public class MainActivity extends ActionBarActivity implements CallBack{
 
-	FloatingActionButton fab, fab1;
+	Button fab, fab1;
 
 	MediaPlayer mPlayer;
 
@@ -32,9 +33,10 @@ public class MainActivity extends ActionBarActivity implements CallBack{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         gv = (GridView)findViewById(R.id.gridView1);
-		fab = (FloatingActionButton)findViewById(R.id.fab);
-		fab1 = (FloatingActionButton)findViewById(R.id.fab1);
-        fab.setImageDrawable(getResources().getDrawable(R.drawable.play_1));
+		fab = (Button)findViewById(R.id.fab);
+		fab1 = (Button)findViewById(R.id.fab1);
+        fab.setBackgroundResource(R.drawable.play_1);
+
         gv.setAdapter(new GridAdapter(this, artiNameList, artiImages));
 
 		mPlayer = MediaPlayer.create(getApplicationContext(),
@@ -52,7 +54,7 @@ public class MainActivity extends ActionBarActivity implements CallBack{
 					case 0:
 						mPlayer.seekTo(length);
 						mPlayer.start();
-						fab.setImageDrawable(getResources().getDrawable(R.drawable.pause_1));
+						fab.setBackgroundResource(R.drawable.pause_1);
 						//fabImageButton.setImageDrawable(R.drawable.action_pause);
 						num++;
 						break;
@@ -62,7 +64,7 @@ public class MainActivity extends ActionBarActivity implements CallBack{
 							length = mPlayer.getCurrentPosition();
 						}
 						//fabImageButton.setBackgroundResource(R.drawable.action_play);
-						fab.setImageDrawable(getResources().getDrawable(R.drawable.play_1));
+						fab.setBackgroundResource(R.drawable.play_1);
 						num++;
 
 						break;

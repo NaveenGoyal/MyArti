@@ -10,9 +10,10 @@
 
     <TextView
         android:id="@+id/txtLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home View"
+        android:gravity="center"
         android:paddingTop="5dp"
         android:textColor="#FF800000"
         android:textSize="25dp"

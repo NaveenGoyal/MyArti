@@ -1,13 +1,11 @@
 package com.example.ngoyal.myarti;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -52,13 +50,20 @@ public class MainActivity extends ActionBarActivity implements CallBack{
 				Log.d("Naveen", "Inside the OnClick and Count is " + count + "Num is" + num);
 				switch (count) {
 					case 0:
-						mPlayer.seekTo(length);
-						mPlayer.start();
+						Thread thread = new Thread(new Runnable() {
+							public void run() {
+								mPlayer.seekTo(length);
+								mPlayer.start();
+							}
+						});
+						thread.start();
+
 						fab.setBackgroundResource(R.drawable.pause_1);
 						//fabImageButton.setImageDrawable(R.drawable.action_pause);
 						num++;
 						break;
 					case 1:
+
 						if (mPlayer != null && mPlayer.isPlaying()) {
 							mPlayer.pause();
 							length = mPlayer.getCurrentPosition();
@@ -80,6 +85,17 @@ public class MainActivity extends ActionBarActivity implements CallBack{
 			}
 		});
     }
+
+
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (mPlayer != null) {
+			mPlayer.stop();
+			mPlayer = null;
+		}
+	}
 
 	@Override
 	public void startMyActivity(int position) {

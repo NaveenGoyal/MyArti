@@ -1,5 +1,6 @@
 package com.example.ngoyal.myarti;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -12,7 +13,7 @@ import android.widget.Button;
 import android.widget.GridView;
 
 
-public class MainActivity extends ActionBarActivity implements CallBack{
+public class MainActivity extends Activity implements CallBack{
 
 	Button fab, fab1;
 

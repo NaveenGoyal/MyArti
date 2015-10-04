@@ -48,9 +48,9 @@ public class HomeActivity extends Activity {
         navMataKavach =getResources().getStringArray(R.array.nav_MataKavach);
         tvMantraBody.setText(navMantraItems[position]);
         tvMataName.setText(navMataName[position]);
-        Typeface tf = Typeface.createFromAsset(getAssets(), "font/k010.TTF");
+       // Typeface tf = Typeface.createFromAsset(getAssets(), "font/k010.TTF");
         
-        tvArtiBody.setTypeface(tf);
+        //tvArtiBody.setTypeface(tf);
         tvArtiBody.setText(navMataArti[position]);
         tvDhyanBody.setText(navMataDhyan[position]);
         tvSrotBody.setText(navMataStrot[position]);
